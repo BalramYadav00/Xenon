@@ -12,10 +12,9 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />
-          {localStorage.getItem("auth") == "true" ? (
-            <Route exact path="/home" element={<Product />} />
-          ) : null}
-          <Route path="/contact" element={<Contact />} />
+          <Route exact path="/home" element={<Product />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route path="*" element={<div>LogIn or SignUp Please!</div>} />
         </Routes>
       </Router>
     </div>
