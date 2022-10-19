@@ -28,7 +28,7 @@ function Contact() {
           <div class="hidden space-x-10 lg:flex lg:ml-10">
             <Link to={"/home"} class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Home</Link>
 
-            <Link to={'/contact'} class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Contact</Link>
+            <Link to={'/contact'} class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Contact Us</Link>
 
             <a href="#" class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Partners</a>
 
@@ -94,7 +94,7 @@ function Contact() {
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative bg-white shadow-xl">
-          <h2 id="contact-heading" class="sr-only">Contact us</h2>
+          <h2 id="contact-heading" class="sr-only">Contact Us</h2>
 
           <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="relative overflow-hidden py-10 px-6 bg-gradient-to-b from-green-400 to-teal-600 sm:px-10 xl:p-12">
