@@ -36,7 +36,7 @@ function Product() {
           <div class="hidden space-x-10 lg:flex lg:ml-10">
             <a href="#" class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Home</a>
 
-            <Link to={"/contact"} class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Contact</Link>
+            <Link to={"/contact"} class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Contact Us</Link>
 
             <a href="#" class="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Partners</a>
 
