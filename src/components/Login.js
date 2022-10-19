@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import db from "../db/connect";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 function Login(props) {
-  
-  const [users, setUsers]= useState([]);
+  const [users, setUsers] = useState([]);
   const usersCollection = collection(db, "users");
   useEffect(() => {
-    const getUsers = async() => {
+    const getUsers = async () => {
       const data = await getDocs(usersCollection);
-      setUsers(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
-    }
-    getUsers()
-  }, []);
-  
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUsers();
+  }, [addDoc]);
+
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -25,25 +24,36 @@ function Login(props) {
   };
 
   const signIn = () => {
-    const data = users.filter(item => item.email === Email && item.password == Password)
-    console.log(data)
-  if(data.length !== 0){
+    const data = users.filter(
+      (item) => item.email === Email && item.password == Password
+    );
+    console.log(data);
+    if (data.length !== 0) {
       localStorage.setItem("auth", true);
-      navigate('/home')
-    }else{
-      window.alert("No user found please SignUp")
+      setTimeout(() => {
+        navigate("/home");
+      }, 500);
+    } else {
+      window.alert("No user found please SignUp");
     }
   };
-  const signUp = async() => {
-    const data = users.filter(item => item.email === Email && item.password == Password);
-    if(data.length > 0){
+  const signUp = async () => {
+    const data = users.filter(
+      (item) => item.email === Email && item.password == Password
+    );
+    if (data.length > 0) {
       window.alert("Please SignIn user already exists");
-      return null
+      return null;
     }
-    await addDoc(usersCollection, {email: Email, password:Password}).then(res => {
-      console.log(res)
-    })
+    await addDoc(usersCollection, { email: Email, password: Password }).then(
+      (res) => {
+        window.alert("User created");
+      }
+    );
+    localStorage.setItem("auth", true);
+    navigate('/home');
   };
+  
 
   return (
     <div class="min-h-full flex">
@@ -54,7 +64,7 @@ function Login(props) {
               class="h-12 w-auto"
               src="https://tailwindui.com/img/logos/workflow-mark-green-400.svg"
               alt="Workflow"
-            /> 
+            />
             <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
               Sign in to your account
             </h2>
@@ -124,15 +134,15 @@ function Login(props) {
                     </label>
                   </div>
 
-                    <div class="text-sm">
-                        <a
-                        href="#"
-                        class="font-medium text-indigo-600 hover:text-indigo-500"
-                        >
-                        {" "}
-                        Forgot your password?{" "}
-                        </a>
-                    </div>
+                  <div class="text-sm">
+                    <a
+                      href="#"
+                      class="font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                      {" "}
+                      Forgot your password?{" "}
+                    </a>
+                  </div>
                 </div>
                 <div>
                   <div className="my-2">
