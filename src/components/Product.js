@@ -6,6 +6,9 @@ function Product() {
     const logoutHandler = () => {
         localStorage.setItem("auth", false)
         navigate('/')
+    };
+        if (localStorage.getItem("auth") !== "true"){
+      return <div>Login please</div>
     }
   return (
     <div class="bg-white">
