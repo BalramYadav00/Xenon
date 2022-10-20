@@ -78,7 +78,7 @@ function Contact() {
         <div className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top lg:hidden">
           <details
             class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg"
-            open
+            close
           >
             <summary class="text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none">
               Menu
@@ -96,7 +96,7 @@ function Contact() {
                   <button
                     type="button"
                     class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg"
-                    close
+                    open
                   >
                     <span class="sr-only">Close menu</span>
                     <svg
