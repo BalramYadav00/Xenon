@@ -119,12 +119,12 @@ function Contact() {
               </div>
               <div class="pt-5 pb-6">
                 <div class="px-2 space-y-1">
-                  <a
-                    href="#"
+                  <Link
+                    to={'/home'}
                     class="block px-3 py-2 rounded-md text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50"
                   >
                     Home
-                  </a>
+                  </Link>
 
                   <Link
                     to={"/contact"}
