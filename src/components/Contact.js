@@ -96,7 +96,7 @@ function Contact() {
                   <button
                     type="button"
                     class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg"
-                    open
+                    close
                   >
                     <span class="sr-only">Close menu</span>
                     <svg
